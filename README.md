@@ -22,10 +22,9 @@ For the first task, we decided to focus mainly on the relationship between the f
 	x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
 	y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
 
-<p align="center">
-	![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
-	Figure 1: Location of samples  
-</p>
+
+![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
+Figure 1: Location of samples  
 
 
 &emsp;
