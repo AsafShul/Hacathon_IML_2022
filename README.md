@@ -1,10 +1,11 @@
 # Hacathon_IML_2022
 On June 2022, we took part in a Machine Learning Hackathon, as part of the course IML (67577) at HUJI.
 We got raw (timeseries) data of user reports from "Waze" application, and we had two tasks:
-### 1. Next Event Prediction
+
+1. Next Event Prediction - 
 We were given a a dataframe with groups of 4 sequential events in Tel-Aviv (ordered by time) and we had to predict the next event.
 
-### 2. Event Distribution Prediction
+2. Event Distribution Prediction -
 We were given a time range and we had to predict the distribution of events across the nation.
 
 ## Preprocessing and EDA (Exploratory Data Analysis)
@@ -22,7 +23,6 @@ For the first task, we decided to focus mainly on the relationship between the f
 	x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
 	y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
 
-
 ![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
 
 Figure 1: Location of samples  
@@ -32,7 +32,7 @@ For us, the most confusing thing about the data was the dates - we couldn’t un
 We found that the feature 'Update_date' contains only 5 distinct days (15-18.5.22, 24.5.22), while 'pubDate' contains 50 distinct dates. We also found that events that their ‘linqmap_type’ value is not ROAD_CLOSED and ‘linqmap_subtype’ value is not HAZARD_ON_ROAD_CONSTRUCTION are also within the 5 days above, so it made sense.
 We used the library Pandas Profiling to create a clear and visual overview of the data. It helped us in the preprocessing and the EDA. You are welcome to open "waze_raw_data_profile.html".
 
-First Task
+## First Task
 For the baseline model we used Linear Regression, since it is the most common and simple model we could think of, and only used the 4 predicted features as train
 In the Model Selection stage, we have tried the following algorithms: 
 LinearRegression, Ridge Regression, Lasso Regression, LassoCV, SVR Regression, NuSVR, AdaBoostRegressor, RandomForestRegressor, ElasticNet, SGD Regression.
@@ -67,7 +67,8 @@ Figure 5: Comparison between all different optimized regression models
 Figure 6: Hyperparameter choosing for the classification model
 
 * These are some of the graphs we got from the mlFlow interactive comparison window, we didn't upload it due to lack of space.
-Second task
+
+## Second task
 
 For the Baseline estimator, we naively calculated the average for every time slot and event, for each of the days, using all the data we were given (without learning algorithm). Since it is general, these are the results for all days:
 
