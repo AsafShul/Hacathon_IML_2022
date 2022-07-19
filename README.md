@@ -1,7 +1,7 @@
 # Hacathon_IML_2022
 
-[Asaf Shul](https://github.com/AsafShul)
-Asaf Shul, Omer Lifshitz, Idan Glassberg and Tamar Czaczkes.
+[Asaf Shul](https://github.com/AsafShul), [Omer Lifshitz](https://github.com/OmerLif), [Idan Glassberg](https://github.com/idan0405) and [Tamar Czaczkes](https://github.com/TamarCzaczkes).
+
 
 
 
