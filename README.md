@@ -24,12 +24,8 @@ For the first task, we decided to focus mainly on the relationship between the f
 
 
 ![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
+
 Figure 1: Location of samples  
-
-
-&emsp;
-&emsp;
-
 
 We noticed almost half of the data (7154 samples) has no 'linqmap_city' value, but has 'linqmap_street' value. We suspected that all empty city values indicate a highway, and after plotting the 'x' and 'y' coordinates, we could see it really is the situation:
 For us, the most confusing thing about the data was the dates - we couldn’t understand the relation between 'Update_date' and ‘pubDate’, Only later we realized we should only use the 'Update_date' feature. 
@@ -40,22 +36,14 @@ First Task
 For the baseline model we used Linear Regression, since it is the most common and simple model we could think of, and only used the 4 predicted features as train
 In the Model Selection stage, we have tried the following algorithms: 
 LinearRegression, Ridge Regression, Lasso Regression, LassoCV, SVR Regression, NuSVR, AdaBoostRegressor, RandomForestRegressor, ElasticNet, SGD Regression.
- 
+
+![image](https://user-images.githubusercontent.com/101043049/179759901-c0fdc093-ce99-418b-85c9-208b00625a86.png)
+
 Figure 2: Hyperparameters selected
 
+![image](https://user-images.githubusercontent.com/101043049/179759954-bb179582-d5b9-4493-b415-f877504d6ba1.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/101043049/179759970-81060157-ff61-47dd-8d28-cadde59d45d8.png)
 
 Figure 3: Hyperpramters performance Comparison (in mlFlow)
 We have used MLflow library to choose these specific Hyper-parameters. In all the above regression algorithms we used MultiOutputRegressor   to make a multi labeled regression on x and y of the fifth example. To evaluate our regression, we used MSE and the mean Euclidean distance between our prediction and the true values of x and y (as instructed).
@@ -66,42 +54,40 @@ Euclidean distance over test: 2231.790585185445
 MSE over train: 3835508.9475474292
 Euclidean distance over train: 2253.7083560298165
 
- 
+![image](https://user-images.githubusercontent.com/101043049/179760007-cb727757-3c3a-4c94-a125-b7d678a9c593.png)
+
 Figure 4: Example of one of the Random Forest Trees visualizations we got
 
+![image](https://user-images.githubusercontent.com/101043049/179760528-f10fe99f-257e-44bf-9a7a-1725a7954c55.png)
 
- 
 Figure 5: Comparison between all different optimized regression models
 
+![image](https://user-images.githubusercontent.com/101043049/179760548-6cbe5e2f-5c63-4492-a326-214c2be53b66.png)
 
- 
 Figure 6: Hyperparameter choosing for the classification model
-
-
 
 * These are some of the graphs we got from the mlFlow interactive comparison window, we didn't upload it due to lack of space.
 Second task
 
 For the Baseline estimator, we naively calculated the average for every time slot and event, for each of the days, using all the data we were given (without learning algorithm). Since it is general, these are the results for all days:
- 
+
+![image](https://user-images.githubusercontent.com/101043049/179760596-9f3a89ae-ed80-47f0-9d1e-bfea882a5520.png)
+
 Figure 7: Baseline prediction
 
 After exploring the data we were given and realizing we only have 5 days to learn from (in update_date), we chose to do statistical learning, and calculate the average with some adjustments. We read online and tried to modify the results according to real-world statistics. We are expected to predict 5.6.22, which is Shavuot holiday, and like Saturday, religiously driving is forbidden. In an article we found from 2021, the traffic volume on Saturdays is 64% more than regular days .
 In another article, we found data about the average traffic volume in different days, as you can see in the graph below :
- 
+
+![image](https://user-images.githubusercontent.com/101043049/179760621-02214df1-1694-44f6-aa8b-5b6ac21d9f6a.png)
+
 Figure 8: Average traffic volume in Israel, by day
 
 On Thursday (marked a “Today”), we can see that the average traffic in the time slot 8:00-10:00 is about 5% lower than the rest of the work week. Also, even though the traffic in the afternoon is higher, in the time slot 18:00-20:00 the traffic is average. 
 Unsurprisingly, our final predictions were quite similar to the base model.
 
- 
+![image](https://user-images.githubusercontent.com/101043049/179760648-936dc2e3-6870-4588-b31b-f34fb2296347.png)
+
 Figure 9: Second task's predictions
-
-
-
-
-
-
 
 
 ## Our team:
