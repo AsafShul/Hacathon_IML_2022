@@ -17,11 +17,11 @@ New features we added: is_weekend, weekday (day of the week), relative_time (min
 Features we wrote but didn’t use: is_holiday, Dis_from_center_tlv.
 New feature driven from x, y coordinates:
 For the first task, we decided to focus mainly on the relationship between the four samples in each group of samples. We split the data into disjoint sequential groups(by ubdate_date). Then, we combined the four samples into one sample containing all feature. Then we created the new 5 features d1, d2, d3 ,x_centroid, y_centroid as explained below: 
-	d1 - distance between the first and second sample in the group of 4 samples.
-	d2 - distance between the second and third sample in the group of 4 samples.
-	d3 - the distance between the third and fourth  sample in the group of 4 samples.
-	x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
-	y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
+1. d1 - distance between the first and second sample in the group of 4 samples.
+2. d2 - distance between the second and third sample in the group of 4 samples.
+3. d3 - the distance between the third and fourth  sample in the group of 4 samples.
+4. x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
+5. y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
 
 ![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
 
