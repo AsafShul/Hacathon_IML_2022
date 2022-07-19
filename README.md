@@ -1,7 +1,6 @@
 # Hacathon_IML_2022
 On June 2022, we took part in a Machine Learning Hackathon, as part of the course IML (67577) at HUJI.
 
-![image](https://user-images.githubusercontent.com/101043049/179757701-144160cf-1ce9-4960-8217-5d8dfcbeced4.png)
 <img align="left" width="100" height="100" src="[http://www.fillmurray.com/100/100](https://user-images.githubusercontent.com/101043049/179757701-144160cf-1ce9-4960-8217-5d8dfcbeced4.png)">
 
 
