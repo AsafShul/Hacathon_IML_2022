@@ -1,13 +1,5 @@
 # Hacathon_IML_2022
 On June 2022, we took part in a Machine Learning Hackathon, as part of the course IML (67577) at HUJI.
-
-![image](https://user-images.githubusercontent.com/101043049/179757701-144160cf-1ce9-4960-8217-5d8dfcbeced4.png)
-
-
-
-Our team:
-[Asaf Shul](https://github.com/AsafShul), [Omer Lifshitz](https://github.com/OmerLif), [Idan Glassberg](https://github.com/idan0405) and [Tamar Czaczkes](https://github.com/TamarCzaczkes).
-
 We got raw (timeseries) data of user reports from "Waze" application, and we had two tasks:
 ### 1. Next Event Prediction
 We were given a a dataframe with groups of 4 sequential events in Tel-Aviv (ordered by time) and we had to predict the next event.
@@ -15,10 +7,7 @@ We were given a a dataframe with groups of 4 sequential events in Tel-Aviv (orde
 ### 2. Event Distribution Prediction
 We were given a time range and we had to predict the distribution of events across the nation.
 
-At first, 
-
-
-Preprocessing and EDA (Exploratory Data Analysis)
+## Preprocessing and EDA (Exploratory Data Analysis)
 As we approached the data, we saw that all samples are valid, without noticeable corrupted values or empty rows. 
 We removed the following features: 'nComments', 'linqmap_expectedEndDate', 'linqmap_expectedBeginDate', 'linqmap_reportMood', 'Linqmap_nearby' 'linqmap_reportDescription', since they were all mostly empty \ zeros. We also removed the 'OBJECTID' feature, since it is not relevant for predicting. 
 We turned the 'linqmap_reportRating' feature to an indicator, indicating whether the event is highly ranked (3 or more) or not, since we saw 96% of the events are ranked 0 or 5. Changed the name to ‘is_highly_rated’ to be indicative.
@@ -32,8 +21,10 @@ For the first task, we decided to focus mainly on the relationship between the f
 	d3 - the distance between the third and fourth  sample in the group of 4 samples.
 	x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
 	y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
- 
-Figure 1: Location of samples
+
+![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
+&nbsp &nbsp Figure 1: Location of samples
+
 We noticed almost half of the data (7154 samples) has no 'linqmap_city' value, but has 'linqmap_street' value. We suspected that all empty city values indicate a highway, and after plotting the 'x' and 'y' coordinates, we could see it really is the situation:
 For us, the most confusing thing about the data was the dates - we couldn’t understand the relation between 'Update_date' and ‘pubDate’, Only later we realized we should only use the 'Update_date' feature. 
 We found that the feature 'Update_date' contains only 5 distinct days (15-18.5.22, 24.5.22), while 'pubDate' contains 50 distinct dates. We also found that events that their ‘linqmap_type’ value is not ROAD_CLOSED and ‘linqmap_subtype’ value is not HAZARD_ON_ROAD_CONSTRUCTION are also within the 5 days above, so it made sense.
@@ -107,3 +98,5 @@ Figure 9: Second task's predictions
 
 
 
+## Our team:
+[Asaf Shul](https://github.com/AsafShul), [Omer Lifshitz](https://github.com/OmerLif), [Idan Glassberg](https://github.com/idan0405) and [Tamar Czaczkes](https://github.com/TamarCzaczkes).
