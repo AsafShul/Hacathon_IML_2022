@@ -22,12 +22,15 @@ For the first task, we decided to focus mainly on the relationship between the f
 	x_centroid := √(〖x_1〗^2+〖x_2〗^2+〖x_3〗^2+〖x_4〗^2 ) - the center of x coordinate.
 	y_centroid := √(〖y_1〗^2+〖y_2〗^2+〖y_3〗^2+〖y_4〗^2 ) - the center of y coordinate.
 
+<p align="center">
+	![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
+	Figure 1: Location of samples  
+</p>
+
+
 &emsp;
 &emsp;
-![image](https://user-images.githubusercontent.com/101043049/179758946-a43d4af6-4155-484a-b2e2-75618e7b2fca.png)
-&emsp;
-&emsp;
-Figure 1: Location of samples
+
 
 We noticed almost half of the data (7154 samples) has no 'linqmap_city' value, but has 'linqmap_street' value. We suspected that all empty city values indicate a highway, and after plotting the 'x' and 'y' coordinates, we could see it really is the situation:
 For us, the most confusing thing about the data was the dates - we couldn’t understand the relation between 'Update_date' and ‘pubDate’, Only later we realized we should only use the 'Update_date' feature. 
